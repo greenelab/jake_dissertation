@@ -7,7 +7,7 @@ keywords:
 - optimization
 - domain-adaptation
 lang: en-US
-date-meta: '2023-08-29'
+date-meta: '2023-09-04'
 author-meta:
 - Jake Crawford
 header-includes: |
@@ -21,11 +21,11 @@ header-includes: |
   <meta name="citation_title" content="Jake Crawford dissertation title" />
   <meta property="og:title" content="Jake Crawford dissertation title" />
   <meta property="twitter:title" content="Jake Crawford dissertation title" />
-  <meta name="dc.date" content="2023-08-29" />
-  <meta name="citation_publication_date" content="2023-08-29" />
-  <meta property="article:published_time" content="2023-08-29" />
-  <meta name="dc.modified" content="2023-08-29T17:27:32+00:00" />
-  <meta property="article:modified_time" content="2023-08-29T17:27:32+00:00" />
+  <meta name="dc.date" content="2023-09-04" />
+  <meta name="citation_publication_date" content="2023-09-04" />
+  <meta property="article:published_time" content="2023-09-04" />
+  <meta name="dc.modified" content="2023-09-04T17:21:30+00:00" />
+  <meta property="article:modified_time" content="2023-09-04T17:21:30+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -42,9 +42,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/jake_dissertation/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/jake_dissertation/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/jake_dissertation/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -66,10 +66,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/))
+([permalink](https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/))
 was automatically generated
-from [greenelab/jake_dissertation@fe81603](https://github.com/greenelab/jake_dissertation/tree/fe8160350801b436fbaeec03ab3b555eb9115a7a)
-on August 29, 2023.
+from [greenelab/jake_dissertation@00639a0](https://github.com/greenelab/jake_dissertation/tree/00639a09cb825bd0de97caca4e71aaf4da3e5181)
+on September 4, 2023.
 </em></small>
 
 
@@ -108,6 +108,243 @@ on August 29, 2023.
 * Modeling strategies (copy existing review)
 
 * Machine learning for cancer transcriptomics (add some new text)
+
+
+## Chapter 1: Background
+
+This chapter was formatted for this dissertation to provide background information and context for the following chapters. Some elements of the second subsection on machine learning modeling techniques were previously published in the _Current Opinion in Biotechnology_ journal as "Incorporating biological structure into machine learning models in biomedicine" (https://doi.org/10.1016/j.copbio.2019.12.021).
+
+**Contributions:**
+For the unpublished parts of this chapter, I was the sole author.
+For the published parts of this chapter, I wrote the original draft of the review paper, which was edited based on feedback from Casey S. Greene and anonymous reviewers.
+
+
+
+### Introduction
+
+Precision oncology, or the selection of cancer treatments based on molecular or cellular features of patients' tumors, has become a fundamental part of the standard of care for some cancers [@doi:10.1093/annonc/mdx707].
+Although each tumor is unique, the successes of precision oncology reinforce the idea that there are commonalities that can be understood and therapeutically targeted.
+Targeted therapies that have been successfully applied across cancer types and patient subsets include _HER2_ (_ERBB2_) inhibitors in breast and stomach cancer [@doi:10.1093/jnci/djp341], BTK inhibitors in various hematological malignancies [@doi:10.1186/s13045-022-01353-w], and _EGFR_ inhibitors across a variety of carcinomas [@doi:10.1186/s13045-022-01311-6].
+The genes and mutations that drive cancer are often specific to a given cancer type or subtype, but they tend to converge on a few pathways [@doi:10.1016/j.cell.2018.03.035; @doi:10.1016/j.cell.2020.11.045], making more general targeted treatments possible.
+
+The past decade has seen an expansion in the size and diversity of cancer genomics datasets, both publicly available and otherwise.
+The Cancer Genome Atlas (TCGA) Pan-Cancer Atlas [@pancanatlas] is a large, public human tumor sample dataset, containing >10,000 samples from 33 different cancer types, each profiled for varying -omics types with associated clinical information.
+There are also public datasets containing model system data, including the Cancer Cell Line Encyclopedia (CCLE) containing -omics data from human-derived cancer cell lines [@doi:10.1038/s41586-019-1186-3], and the Genomics of Drug Sensitivity in Cancer (GDSC) dataset containing drug sensitivity data for thousands of the same cell lines across hundreds of drugs [@doi:10.1093/nar/gks1111].
+These datasets exhibit heterogeneity on multiple levels.
+Overall, they vary in size, with TCGA having about an order of magnitude more tumor samples than the number of cell lines in CCLE.
+Going a level deeper, the cancer types within them vary in size as well: TCGA has 1,218 breast cancer samples with gene expression data, but only 265 soft tissue sarcoma samples, and only 45 cholangiocarcinoma samples.
+
+In modern machine learning research using text and images, there is a trend toward bigger models capable of solving broader arrays of tasks.
+Foundation models, trained on large datasets to generalize to new tasks with no or minimal task-specific fine-tuning, are in many cases competitive with task-specific models [@arxiv:2205.09911], although they are not without unique caveats [@arxiv:2108.07258].
+Similarly, in genomics, early examples of foundation models are beginning to appear [@arxiv:2306.15794; @doi:10.1101/2023.04.30.538439; @doi:10.1101/2023.05.29.542705].
+Training foundation models on pan-cancer, pan-omics data would be a natural extension of these ideas, which could improve power to detect correlations between biomarkers and phenotypes of interest, or to identify drug susceptibilities in patient sub-populations.
+
+As a whole, this dissertation explores ways in which the structure of large, public pan-cancer datasets can present unexpected challenges and caveats for machine learning.
+TCGA and CCLE both contain data from various -omics types (feature groups) and samples from diverse cancer types/tissues of origin (sample groups).
+There are additional, less obvious forms of structure in these data such as patient sub-populations and sample collection locations, which we will not address directly in this dissertation but which can affect model training and performance as well.
+
+This chapter, Chapter 1, describes existing work at the intersection of cancer -omics and machine learning, which will provide context for the following chapters.
+In Chapter 2, we show that the choice of optimization method can affect model selection and tuning, for prediction from cancer transcriptomic data.
+Chapter 3 explores the relative information content of -omics types/feature groups in TCGA, showing that gene expression tends to contain the most information relative to cancer driver mutations, but most -omics types can serve as effective, and likely somewhat redundant, readouts.
+In Chapter 4, we test generalization across cancer types in TCGA and across datasets (CCLE to TCGA and vice-versa), showing that smaller models do not tend to generalize better across contexts, and cross-validation performance is in most cases a sufficient model selection criterion.
+Finally, in Chapter 5, we conclude by summarizing the implications of these results and discussing future directions.
+
+
+## Cancer -omics data and applications
+
+### Publicly available cancer -omics data resources
+
+A wealth of public cancer genomics and multi-omics human sample resources have been generated in the past decade.
+As mentioned in the introduction, the TCGA Pan-Cancer Atlas [@pancanatlas] contains data spanning 33 cancer types and multiple -omics data types, including mutation, CNV, gene expression, miRNA, DNA methylation, reverse phase protein array (RPPA) proteomics data, and clinical outcome data [@doi:10.1016/j.cell.2018.02.052].
+The International Cancer Genome Consortium (ICGC) data portal is an initiative to unite and harmonize data from many worldwide cancer projects including TCGA, mostly focused on DNA/somatic mutation data but containing some gene expression and other -omics data [@doi:10.1038/s41587-019-0055-9].
+The Pan-Cancer Analysis of Whole Genomes (PCAWG) project attempts to expand from the whole-exome sequencing provided by TCGA to whole-genome sequencing, providing data and analysis for 2,658 whole genome cancer samples [@doi:10.1038/s41586-020-1969-6]
+The American Association for Cancer Research (AACR)'s Project GENIE (Genomics, Evidence, Neoplasia, Information, Exchange) is another large-scale initiative to share genomic data, with the intention of complementing TCGA and allowing for external validation of methods and biological findings [@doi:10.1158/2159-8290.CD-17-0151].
+Unlike TCGA, which contains whole-exome sequencing data, the GENIE dataset is primarily comprised of targeted sequencing panels of a subset of cancer-relevant genes.
+
+In addition to samples derived from human tumors or neoplasms, data from model systems such as cancer cell lines and mouse models are an important element of therapeutic development.
+The Cancer Cell Line Encyclopedia (CCLE) contains a variety of uniformly processed -omics data across more than 1000 human-derived cell lines, including somatic mutations, CNV data, gene fusion information, and gene expression [@doi:10.1038/s41586-019-1186-3].
+The Cancer Dependency Map (DepMap) complements CCLE with information about cancer cell line vulnerabilities, derived from CRISPR and RNAi knockout screens [@doi:10.1038/s41467-021-21898-7; @doi:10.1038/s41588-021-00819-w].
+The Connectivity Map (CMap) and LINCS L1000 project aims to catalog the responses of cell lines to both genetic and pharmacological perturbations, identifying the changes to gene expression and protein expression that result [@doi:10.1016/j.cell.2017.10.049].
+The GDSC and PRISM drug screening datasets provide cell viability dose-response readings for many of the cell lines in CCLE, after perturbation with small molecules [@doi:10.1093/nar/gks1111; @doi:10.1038/s43018-019-0018-6].
+Aside from cell lines, the PDX Encyclopedia is a dataset of patient-derived xenograft (PDX) mouse model data, including more than 1000 models with mutation, CNV, and gene expression data for each [@doi:10.1038/nm.3954].
+The National Cancer Institute's Patient-Derived Models Repository (PDMR) also contains mutation and gene expression profiles for mouse models and patient-derived tumor organoids, or tumoroids [@doi:10.1038/s41467-021-25177-3; @pdmr], although it is still under development.
+
+### Applications of machine learning in cancer genomics
+
+Historically, one common use of -omics data in cancer has been to define subtypes, or clinically relevant patient subsets that may have similar prognosis or respond similarly to therapy.
+Many studies have sought to distinguish tumor samples from control/normal samples, to identify subtypes of a particular cancer type, or to distinguish samples of a particular cancer type/tissue of origin from samples of other cancer types (e.g. [@doi:10.1186/s12920-020-0677-2; @doi:10.3389/fbioe.2020.00737; @doi:10.1109/TBME.2012.2225622; @doi:10.1186/s13073-023-01176-5]).
+External validation is difficult, however, since samples in TCGA were taken from patients who had already been clinically diagnosed with a particular cancer type or subtype, i.e. without using machine learning.
+Potentially a more clinically relevant way to frame the problem is to classify cancers of unknown primary (CUP), which are metastatic cancers where the primary site cannot be identified in the clinic.
+Machine learning approaches have identified cell lineages and developmental trajectories for CUP samples [@doi:10.1158/2159-8290.CD-21-1443] and integrated electronic health record (EHR) data and genomic data to suggest targeted therapies for CUP patients [@doi:10.1038/s41591-023-02482-6].
+Relatedly, distinguishing primary samples from metastatic samples, or predicting metastatic potential of primary samples, is another classification problem which -omics data has been used for [@doi:10.1038/s41467-019-13825-8; @doi:10.1101/2020.09.07.286583; @doi:10.1371/journal.pcbi.1009956]
+
+Prediction of drug response from genomic data, often combined with clinical features or other metadata, is a machine learning problem with clear clinical applications.
+Given the availability and uniformity of the cell line data in CCLE, and drug response data in GDSC, PRISM and other cell line datasets, many method development efforts have centered on these data sources.
+Examples include prediction of drug response from integrated multi-omics data [@doi:10.1093/bioinformatics/btz318], prediction of drug response using perturbation modeling via CMap as an intermediate step [@doi:10.1093/bioinformatics/btz158], and prediction of drug response via single-cell transcriptomic data [@doi:10.1101/2022.01.11.475728], among many others reviewed in [@doi:10.1093/bib/bbab294; @doi:10.1038/s41467-022-34277-7; @doi:10.1038/s41598-023-39179-2].
+Large datasets of human-derived genomic data with associated drug response annotations are more difficult to find.
+Still, there have been attempts to develop and/or validate models on human data, including for prediction of immunotherapy response which benefits from applications across a wide range of cancer types [@doi:10.1038/s41587-021-01070-8; @doi:10.1016/j.ccell.2023.06.006; @doi:10.1101/2020.09.03.260265].
+Prognosis or patient survival prediction from multi-omics data is another area of modeling that leverages widely available clinical metadata, reviewed in detail in many existing papers [@doi:10.1186/1471-2288-12-102; @doi:10.1093/bib/bbu003; @doi:10.1186/s12885-021-08796-3; @doi:10.1016/j.csbj.2014.11.005].
+
+Much of our work, described later in this thesis, stems from the idea of predicting the mutation status in key driver genes of cancer samples, based on functional readouts such as gene expression [@doi:10.1158/1078-0432.CCR-13-1943; @doi:10.1016/j.celrep.2018.03.046; @doi:10.1186/s13059-020-02021-3; @doi:10.1371/journal.pone.0241514].
+At first consideration, an accurate mutation status classifier may not seem particularly useful, since for a patient sample a clinician could simply sequence the genome, or select genes in the genome, to determine driver mutation status.
+One application of accurate mutation status classifiers, however, is to identify samples with a similar phenotype to those with a driver mutation, but _without_ the mutation being present in DNA sequencing data.
+Observed examples of this phenomenon include the "BRCAness" phenotype in tumors without observed _BRCA1_/_BRCA2_ mutations [@doi:10.1038/nrc.2015.21], and the "Ph-like" leukemia phenotype in the absence of the Philadelphia chromosome fusion [@doi:10.1182/asheducation-2016.1.561], among others.
+Following this line of reasoning, algorithms have been developed to identify mutations that "phenocopy" known cancer drivers [@doi:10.1142/9789811215636_0031; @doi:10.1101/2022.07.28.501874], and to integrate this information into drug response prediction pipelines to define larger and more accurate patient subgroups [@doi:10.1038/s41525-022-00328-7].
+Related machine learning approaches to genomic prediction/phenotype identification include methods for identifying DNA damage repair deficiencies based on genomic data [@doi:10.1038/nm.4292; @doi:10.1038/s43018-022-00474-y] and for identifying synthetic lethal relationships for use in targeted therapy selection [@doi:10.1016/j.cell.2021.03.030].
+Such methods could be useful for defining broader and more representative patient groups than would be possible based solely on somatic mutation status, that may exhibit similar tumor phenotypes or respond to similar therapies.
+For example, in "basket" clinical trials where patients are included across cancer types based on the presence or absence of individual molecular markers [@doi:10.1200/jco.2014.58.2007], including "phenocopies" could improve efficacy for some targeted therapies.
+
+
+## Machine learning modeling strategies for -omics data
+
+It can be challenging to distinguish signal from noise in biomedical datasets, and machine learning methods are particularly hampered when the amount of available training data is small.
+Incorporating biomedical knowledge into machine learning models can reveal patterns in noisy data [@doi:10.1038/nrg.2017.38] and aid model interpretation [@doi:10.1016/j.cell.2018.05.056].
+Biological knowledge can take many forms, including genomic sequences, pathway databases, gene interaction networks, and knowledge hierarchies such as the Gene Ontology [@doi:10.1093/nar/gky1055].
+However, there is often no canonical way to encode these structures as real-valued predictors.
+Modelers must creatively decide how to encode biological knowledge that they expect will be relevant to the task.
+
+Biomedical datasets often contain more input predictors than data samples [@doi:10.1109/JPROC.2015.2494198; @arxiv:1611.09340].
+A genetic study may genotype millions of single nucleotide polymorphisms (SNPs) in thousands of individuals, or a gene expression study may profile the expression of thousands of genes in tens of samples.
+Thus, it can be useful to include prior information describing relationships between predictors to inform the representation learned by the model.
+This contrasts with non-biological applications of machine learning, where one might fit a model on millions of images [@doi:10.1109/CVPR.2009.5206848] or tens of thousands of documents [@url:https://www.aclweb.org/anthology/P11-1015/], making inclusion of prior information unnecessary.
+There are many complementary ways to incorporate heterogeneous sources of biomedical data into the learning process, which have been covered in review papers elsewhere [@doi:10.3389/fgene.2019.00381; @doi:10.1016/j.inffus.2018.09.012].
+These include feature extraction or representation learning prior to modeling and/or other data integration methods that do not necessarily involve customizing the model itself.
+
+### Sequence models
+
+Early neural network models primarily used hand-engineered sequence features as input to a fully connected neural network [@doi:10.1093/nar/gku1058; @doi:10.1126/science.1254806] (Figure {@fig:sequence_features}).
+As convolutional neural network (CNN) approaches matured for image processing and computer vision, researchers leveraged biological sequence proximity similarly.
+CNNs are a neural network variant that groups input data by spatial context to extract features for prediction.
+
+The definition of "spatial context" is specific to the input: one might group image pixels that are nearby in 2D space, or genomic base pairs that are nearby in the linear genome.
+In this way, CNNs consider context without making strong assumptions about exactly how much context is needed or how it should be encoded; the data informs the encoding.
+A detailed description of how CNNs are applied to sequences can be found in Angermueller et al. [@doi:10.15252/msb.20156651].
+
+![
+    Contrasting approaches to extracting features from DNA or RNA sequence data.
+    Early models defined features of interest by hand based on prior knowledge about the prediction or clustering problem of interest, such as GC content or sequence melting point, as depicted in the left branch in the figure.
+    Convolutional models, depicted in the right branch, use sequence convolutions to derive features directly from sequence proximity, without requiring quantities of interest to be identified before the model is trained.
+    Red or blue emphasis denotes inputs to the predictive model (either the hand-defined numeric features on the left or the outputs of convolutional filters on the right).
+](images/biopriors/sequence_features_revised.svg){#fig:sequence_features .white}
+
+#### Applications in regulatory biology
+
+Many early applications of deep learning to biological sequences were in regulatory biology.
+Early CNNs for sequence data predicted binding protein sequence specificity from DNA or RNA sequence [@doi:10.1038/nbt.3300], variant effects from noncoding DNA sequence [@doi:10.1038/nmeth.3547], and chromatin accessibility from DNA sequence [@doi:10.1101/gr.200535.115].
+
+Recent sequence models take advantage of hardware advances and methodological innovation to incorporate more sequence context and rely on fewer modeling assumptions.
+BPNet, a CNN that predicts transcription factor binding profiles from DNA sequences, accurately mapped known locations of binding motifs in mouse embryonic stem cells [@doi:10.1101/737981].
+BPNet considers 1000 base pairs of context around each position when predicting binding probabilities with a technique called dilated convolutions [@arxiv:1511.07122], which is particularly important because motif spacing and periodicity can influence binding.
+cDeepbind [@doi:10.1101/345140] combines RNA sequences with information about secondary structure to predict RNA binding protein affinities.
+Its convolutional model acts on a feature vector combining sequence and structural information, using context for both to inform predictions.
+APARENT [@doi:10.1016/j.cell.2019.04.046] is a CNN that predicts alternative polyadenylation (APA) from a training set of over 3 million synthetic APA reporter sequences.
+These diverse applications underscore the power of modern deep learning models to synthesize large sequence datasets.
+
+Models that consider sequence context have also been applied to epigenetic data.
+DeepSignal [@doi:10.1093/bioinformatics/btz276] is a CNN that uses contextual electrical signals from Oxford Nanopore single-molecule sequencing data to predict 5mC or 6mA DNA methylation status.
+MRCNN [@doi:10.1186/s12864-019-5488-5] uses sequences of length 400, centered at CpG sites, to predict 5mC methylation status.
+Deep learning models have also been used to predict gene expression from histone modifications [@doi:10.1101/329334; @doi:10.1093/bioinformatics/bty612].
+Here, a neural network model consisting of long short-term memory (LSTM) units was used to encode the long-distance interactions of histone marks in both the 3' and 5' genomic directions.
+In each of these cases, proximity in the linear genome helped model the complex interactions between DNA sequence and epigenome.
+
+#### Applications in variant calling and mutation detection
+
+Identification of genetic variants also benefits from models that include sequence context.
+DeepVariant [@doi:10.1038/nbt.4235] applies a CNN to images of sequence read pileups, using read data around each candidate variant to accurately distinguish true variants from sequencing errors.
+CNNs have also been applied to single molecule (PacBio and Oxford Nanopore) sequencing data [@doi:10.1038/s41467-019-09025-z], using a different sequence encoding that results in better performance than DeepVariant on single molecule data.
+However, many variant calling models still use hand-engineered sequence features as input to a classifier, including current state-of-the-art approaches to insertion/deletion calling [@doi:10.1101/601450; @doi:10.1101/628222].
+Detection of somatic mutations is a distinct but related challenge to detection of germline variants, and has also recently benefitted from use of CNNs [@doi:10.1038/s41467-019-09027-x].
+
+### Network- and pathway-based models
+
+Rather than operating on sequences, many machine learning models in biomedicine operate on inputs that lack intrinsic order.
+Models may make use of gene expression data matrices from RNA sequencing or microarray experiments in which rows represent samples and columns represent genes.
+To account for relationships between genes, one might incorporate known interactions or correlations when making predictions or generating a low-dimensional representation of the data (Figure {@fig:network_models}).
+This is comparable to the manner in which sequence context pushes models to consider nearby base pairs similarly.
+
+![
+    The relationships between genes provide structure that can be incorporated into machine learning models.
+    One common approach is to use a network or collection of gene sets to embed the data in a lower-dimensional space, in which genes that are in the same gene sets or that are well-connected in the network have a similar representation in the lower-dimensional space.
+    The embedded data can then be used for classification or clustering tasks.
+    The "x" values in the data table represent gene expression measurements.
+](images/biopriors/network_models_revised.svg){#fig:network_models .white}
+
+#### Applications in transcriptomics
+
+Models built from gene expression data can benefit from incorporating gene-level relationships.
+One form that this knowledge commonly takes is a database of gene sets, which may represent biological pathways or gene signatures for a biological state of interest.
+PLIER [@doi:10.1038/s41592-019-0456-1] uses gene set information from MSigDB [@doi:10.1073/pnas.0506580102] and cell type markers to extract a representation of gene expression data that corresponds to biological processes and reduces technical noise.
+The resulting gene set-aligned representation accurately decomposed cell type mixtures.
+MultiPLIER [@doi:10.1016/j.cels.2019.04.003] applied PLIER to the recount2 gene expression compendium [@doi:10.1038/nbt.3838] to develop a model that shares information across multiple tissues and diseases, including rare diseases with limited sample sizes.
+PASNet [@doi:10.1186/s12859-018-2500-z] uses MSigDB to inform the structure of a neural network for predicting patient outcomes in glioblastoma multiforme (GBM) from gene expression data.
+This approach aids interpretation, as pathway nodes in the network with high weights can be inferred to correspond to certain pathways in GBM outcome prediction.
+
+Gene-level relationships can also be represented with networks.
+Network nodes typically represent genes and real-valued edges may represent interactions or correlations between genes, often in a tissue or cell type context of interest.
+Network-based stratification [@doi:10.1038/nmeth.2651] is an early example of a method for utilizing gene interaction network data in this manner, applied to improve subtyping across several cancer types.
+More recently, netNMF-sc [@doi:10.1101/544346] incorporates coexpression networks [@doi:10.1093/nar/gkw868] as a smoothing term for dimension reduction and dropout imputation in single-cell gene expression data.
+The coexpression network improves performance for identifying cell types and cell cycle marker genes, as compared to using raw gene expression or other single-cell dimension reduction methods.
+Combining gene expression data with a network-derived smoothing term also improved prediction of patient drug response in acute myeloid leukemia [@arxiv:1906.10670] and detection of mutated cancer genes [@doi:10.1038/s41598-017-03141-w].
+PIMKL [@doi:10.1038/s41540-019-0086-3] combines network and pathway data to predict disease-free survival from breast cancer cohorts.
+This method takes as input both RNA-seq gene expression data and copy number alteration data, but can also be applied to gene expression data alone.
+
+Gene regulatory networks can also augment models for gene expression data.
+These networks describe how the expression of genes is modulated by biological regulators such as transcription factors, microRNAs, or small molecules.
+creNET [@doi:10.1038/s41598-018-19635-0] integrates a gene regulatory network, derived from STRING [@doi:10.1093/nar/gku1003], with a sparse logistic regression model to predict phenotypic response in clinical trials for ulcerative colitis and acute kidney rejection.
+The gene regulatory information allows the model to identify the biological regulators associated with the response, potentially giving mechanistic insight into differential clinical trial response.
+GRRANN [@doi:10.1186/s12859-017-1984-2], which was applied to the same data as creNET, uses a gene regulatory network to inform the structure of a neural network.
+Several other methods [@doi:10.1093/nar/gkx681; @doi:10.1093/bioinformatics/bty945] have also used gene regulatory network structure to constrain the structure of a neural network, reducing the number of parameters to be fit and facilitating interpretation.
+
+#### Applications in genetics
+
+Approaches that incorporate gene set or network structure into genetic studies have a long history [@doi:10.1093/biostatistics/kxl007; @doi:10.1093/bioinformatics/btn081].
+Recent applications include expression quantitative trait loci (eQTL) mapping studies, which aim to identify associations between genetic variants and gene expression.
+netReg [@doi:10.1093/bioinformatics/btx677] implements a graph-regularized dual LASSO algorithm for eQTL mapping [@doi:10.1093/bioinformatics/btu293] in a publicly available R package.
+This model smooths regression coefficients simultaneously based on networks describing associations between genes (target variables in the eQTL regression model) and between variants (predictors in the eQTL regression model).
+eQTL information is also used in conjunction with genetic variant information to predict phenotypes, in an approach known as Mendelian randomization (MR).
+In [@doi:10.1111/biom.13072], a smoothing term derived from a gene regulatory network is used in an MR model.
+The model with the network smoothing term, applied to a human liver dataset, more robustly identifies genes that influence enzyme activity than a network-agnostic model.
+As genetic datasets grow, we expect that researchers will continue to develop models that leverage gene set and network databases.
+
+### Other models incorporating biological structure
+
+Knowledge about biological entities is often organized in an ontology, which is a directed graph that encodes relationships between entities (see Figure {@fig:ontology_models} for a visual example).
+The Gene Ontology (GO) [@doi:10.1093/nar/gky1055] describes the relationships between cellular subsystems and other attributes describing proteins or genes.
+DCell [@doi:10.1038/nmeth.4627] uses GO to inform the connectivity of a neural network predicting the effects of gene deletions on yeast growth.
+DCell performs comparably to an unconstrained neural network for this task.
+Additionally, it is easier to interpret: a cellular subsystem with high neuron outputs under a particular gene deletion can be inferred to be strongly affected by the gene deletion, providing a putative genotype-phenotype association.
+DeepGO [@doi:10.1093/bioinformatics/btx624] uses a similar approach to predict protein function from amino acid sequence with a neural network constrained by the dependencies of GO.
+However, a follow-up paper by the same authors [@doi:10.1093/bioinformatics/btz595] showed that this hierarchy-aware approach can be outperformed by a hierarchy-naive CNN, which uses only amino acid sequence and similarity to labeled training set proteins.
+This suggests a tradeoff between interpretability and predictive accuracy for protein function prediction.
+
+![
+    Directed graph-structured data, such as an ontology or phylogenetic tree, can be incorporated into machine learning models.
+    Here, the connections in the neural network used to predict a set of labels parallel those in the tree graph.
+    This type of constraint can also be useful in model interpretation: for example, if the nodes in the right tree branch have high neuron outputs for a given sample, then the subsystem encoded in the right branch of the tree graph is most likely important in making predictions for that sample.
+    The "x" values in the data table represent gene expression measurements.
+](images/biopriors/ontology_models_revised.svg){#fig:ontology_models .white}
+
+Phylogenetic trees, or hierarchies describing the evolutionary relationships between species, can be useful for a similar purpose.
+glmmTree [@doi:10.3389/fmicb.2018.01391] uses a phylogenetic tree describing the relationship between microorganisms to improve predictions of age based on gut microbiome data.
+The same authors combine a similar phylogeny smoothing strategy with sparse regression to model caffeine intake and smoking status based on microbiome data [@doi:10.3389/fmicb.2018.03112].
+Phylogenetic trees can also describe the relationships between subclones of a tumor, which are fundamental to understanding cancer evolution and development.
+Using a tumor phylogeny inferred from copy number aberration (CNA) sequencing data as a smoothing term for deconvolving tumor subclones provided more robust predictions than a phylogeny-free model [@doi:10.1007/978-3-030-17083-7_11].
+The tree structure of the phylogeny and the subclone mixture model are fit jointly to the CNA data.
+
+Depending on the application, other forms of structure or prior knowledge can inform predictions and interpretation of the model's output.
+CYCLOPS [@doi:10.1073/pnas.1619320114] uses a circular node autoencoder [@doi:10.1162/neco.1996.8.2.390] to order periodic gene expression data and estimate circadian rhythms.
+The authors validated the method by correctly ordering samples without temporal labels and identifying genes with known circadian expression.
+They then applied it to compare gene expression in normal and cancerous liver biopsies, identifying drug targets with circadian expression as candidates for chronotherapy.
+NetBiTE [@arxiv:1808.06603] uses drug-gene interaction information from GDSC [@doi:10.1093/nar/gks1111], in addition to protein interaction data, to build a tree ensemble model with splits that are biased toward high-confidence drug-gene interactions.
+The model predicts sensitivity to drugs that inhibit critical signaling pathways in cancer, showing improved predictive performance compared to random forests, another commonly used tree ensemble model.
+
+### Conclusions
+
+As the quantity and richness of biomedical data has increased, sequence repositories and interaction databases have expanded and become more robust.
+This raises opportunities to integrate these resources into the structure of machine learning models.
+There have been several past attempts to benchmark and compare approaches to integrating structured data into predictive models in biomedicine, including the evaluation in [@doi:10.1371/journal.pone.0034796] and more recent studies in [@arxiv:1905.02295] and [@arxiv:1910.09600].
+Extending and broadening benchmarking efforts such as these will be vital, improving our understanding of the suitability of problem domains and datasets for the classes of methods described in this review.
+In the future, we foresee that incorporating structured biomedical data will become commonplace for improving model interpretability and boosting performance when sample size is limited.
 
 
 ## Chapter 2: optimization strongly influences model selection in transcriptomic prediction

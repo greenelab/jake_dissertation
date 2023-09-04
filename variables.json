@@ -9,11 +9,11 @@
       "domain-adaptation"
     ],
     "lang": "en-US",
-    "date-meta": "2023-08-29",
+    "date-meta": "2023-09-04",
     "author-meta": [
       "Jake Crawford"
     ],
-    "header-includes": "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/main/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta name=\"dc.title\" content=\"Jake Crawford dissertation title\" />\n<meta name=\"citation_title\" content=\"Jake Crawford dissertation title\" />\n<meta property=\"og:title\" content=\"Jake Crawford dissertation title\" />\n<meta property=\"twitter:title\" content=\"Jake Crawford dissertation title\" />\n<meta name=\"dc.date\" content=\"2023-08-29\" />\n<meta name=\"citation_publication_date\" content=\"2023-08-29\" />\n<meta property=\"article:published_time\" content=\"2023-08-29\" />\n<meta name=\"dc.modified\" content=\"2023-08-29T17:27:32+00:00\" />\n<meta property=\"article:modified_time\" content=\"2023-08-29T17:27:32+00:00\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Jake Crawford\" />\n<meta name=\"citation_author_institution\" content=\"Genomics and Computational Biology Graduate Group, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-6207-0782\" />\n<meta name=\"twitter:creator\" content=\"@jjc2718\" />\n<link rel=\"canonical\" href=\"https://greenelab.github.io/jake_dissertation/\" />\n<meta property=\"og:url\" content=\"https://greenelab.github.io/jake_dissertation/\" />\n<meta property=\"twitter:url\" content=\"https://greenelab.github.io/jake_dissertation/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://greenelab.github.io/jake_dissertation/\" />\n<meta name=\"citation_pdf_url\" content=\"https://greenelab.github.io/jake_dissertation/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://greenelab.github.io/jake_dissertation/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->\n",
+    "header-includes": "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/main/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta name=\"dc.title\" content=\"Jake Crawford dissertation title\" />\n<meta name=\"citation_title\" content=\"Jake Crawford dissertation title\" />\n<meta property=\"og:title\" content=\"Jake Crawford dissertation title\" />\n<meta property=\"twitter:title\" content=\"Jake Crawford dissertation title\" />\n<meta name=\"dc.date\" content=\"2023-09-04\" />\n<meta name=\"citation_publication_date\" content=\"2023-09-04\" />\n<meta property=\"article:published_time\" content=\"2023-09-04\" />\n<meta name=\"dc.modified\" content=\"2023-09-04T17:21:30+00:00\" />\n<meta property=\"article:modified_time\" content=\"2023-09-04T17:21:30+00:00\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Jake Crawford\" />\n<meta name=\"citation_author_institution\" content=\"Genomics and Computational Biology Graduate Group, Perelman School of Medicine, University of Pennsylvania, Philadelphia, PA, USA\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0001-6207-0782\" />\n<meta name=\"twitter:creator\" content=\"@jjc2718\" />\n<link rel=\"canonical\" href=\"https://greenelab.github.io/jake_dissertation/\" />\n<meta property=\"og:url\" content=\"https://greenelab.github.io/jake_dissertation/\" />\n<meta property=\"twitter:url\" content=\"https://greenelab.github.io/jake_dissertation/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://greenelab.github.io/jake_dissertation/\" />\n<meta name=\"citation_pdf_url\" content=\"https://greenelab.github.io/jake_dissertation/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://greenelab.github.io/jake_dissertation/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->\n",
     "bibliography": [
       "content/manual-references.json"
     ],
@@ -23,10 +23,10 @@
     "manubot-clear-requests-cache": false
   },
   "manubot": {
-    "date": "2023-08-29",
-    "date_long": "August 29, 2023",
-    "generated": "2023-08-29T17:27:32+00:00",
-    "generated_date_long": "August 29, 2023",
+    "date": "2023-09-04",
+    "date_long": "September 4, 2023",
+    "generated": "2023-09-04T17:21:30+00:00",
+    "generated_date_long": "September 4, 2023",
     "randomize_author_order": false,
     "authors": [
       {
@@ -55,19 +55,19 @@
       "repo_slug": "greenelab/jake_dissertation",
       "repo_owner": "greenelab",
       "repo_name": "jake_dissertation",
-      "commit": "fe8160350801b436fbaeec03ab3b555eb9115a7a",
-      "triggering_commit": "fe8160350801b436fbaeec03ab3b555eb9115a7a",
-      "build_url": "https://github.com/greenelab/jake_dissertation/commit/fe8160350801b436fbaeec03ab3b555eb9115a7a/checks",
-      "job_url": "https://github.com/greenelab/jake_dissertation/actions/runs/6015562444"
+      "commit": "00639a09cb825bd0de97caca4e71aaf4da3e5181",
+      "triggering_commit": "00639a09cb825bd0de97caca4e71aaf4da3e5181",
+      "build_url": "https://github.com/greenelab/jake_dissertation/commit/00639a09cb825bd0de97caca4e71aaf4da3e5181/checks",
+      "job_url": "https://github.com/greenelab/jake_dissertation/actions/runs/6076214363"
     },
     "html_url": "https://greenelab.github.io/jake_dissertation/",
     "pdf_url": "https://greenelab.github.io/jake_dissertation/manuscript.pdf",
-    "html_url_versioned": "https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/",
-    "pdf_url_versioned": "https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/manuscript.pdf",
+    "html_url_versioned": "https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/",
+    "pdf_url_versioned": "https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/manuscript.pdf",
     "manubot_version": "0.5.5",
     "rootstock_commit": "8c1a803748961dcf6b7e8ed4d5ec8f8ce6d5a2a9",
     "manuscript_stats": {
-      "word_count": 22199
+      "word_count": 26478
     }
   }
 }
