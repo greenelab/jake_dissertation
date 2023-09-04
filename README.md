@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/greenelab/jake_dissertation/tree/gh-pages) branch hosts the contents of this directory at <https://greenelab.github.io/jake_dissertation/>.
-The permalink for this webpage version is <https://greenelab.github.io/jake_dissertation/v/fe8160350801b436fbaeec03ab3b555eb9115a7a/>.
+The permalink for this webpage version is <https://greenelab.github.io/jake_dissertation/v/00639a09cb825bd0de97caca4e71aaf4da3e5181/>.
 To redirect to the permalink for the latest manuscript version at anytime, use the link <https://greenelab.github.io/jake_dissertation/v/freeze/>.
 
 ## Files
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`fe8160350801b436fbaeec03ab3b555eb9115a7a`](https://github.com/greenelab/jake_dissertation/commit/fe8160350801b436fbaeec03ab3b555eb9115a7a).
+[`00639a09cb825bd0de97caca4e71aaf4da3e5181`](https://github.com/greenelab/jake_dissertation/commit/00639a09cb825bd0de97caca4e71aaf4da3e5181).
