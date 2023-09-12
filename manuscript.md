@@ -7,7 +7,7 @@ keywords:
 - optimization
 - domain-adaptation
 lang: en-US
-date-meta: '2023-09-06'
+date-meta: '2023-09-12'
 author-meta:
 - Jake Crawford
 header-includes: |
@@ -21,11 +21,11 @@ header-includes: |
   <meta name="citation_title" content="Jake Crawford dissertation title" />
   <meta property="og:title" content="Jake Crawford dissertation title" />
   <meta property="twitter:title" content="Jake Crawford dissertation title" />
-  <meta name="dc.date" content="2023-09-06" />
-  <meta name="citation_publication_date" content="2023-09-06" />
-  <meta property="article:published_time" content="2023-09-06" />
-  <meta name="dc.modified" content="2023-09-06T11:59:06+00:00" />
-  <meta property="article:modified_time" content="2023-09-06T11:59:06+00:00" />
+  <meta name="dc.date" content="2023-09-12" />
+  <meta name="citation_publication_date" content="2023-09-12" />
+  <meta property="article:published_time" content="2023-09-12" />
+  <meta name="dc.modified" content="2023-09-12T19:30:34+00:00" />
+  <meta property="article:modified_time" content="2023-09-12T19:30:34+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -42,9 +42,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/jake_dissertation/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/jake_dissertation/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/jake_dissertation/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/jake_dissertation/v/7e951b81e22f257252b7be3a5163256137ab2f82/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/7e951b81e22f257252b7be3a5163256137ab2f82/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/7e951b81e22f257252b7be3a5163256137ab2f82/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/jake_dissertation/v/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -66,10 +66,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/jake_dissertation/v/7e951b81e22f257252b7be3a5163256137ab2f82/))
+([permalink](https://greenelab.github.io/jake_dissertation/v/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa/))
 was automatically generated
-from [greenelab/jake_dissertation@7e951b8](https://github.com/greenelab/jake_dissertation/tree/7e951b81e22f257252b7be3a5163256137ab2f82)
-on September 6, 2023.
+from [greenelab/jake_dissertation@2773a82](https://github.com/greenelab/jake_dissertation/tree/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa)
+on September 12, 2023.
 </em></small>
 
 
@@ -103,7 +103,7 @@ on September 6, 2023.
 
 
 
-## Chapter 1: Background
+## Chapter 1: background
 
 This chapter was formatted for this dissertation to provide background information and context for the following chapters. The subsection titled "Machine learning modeling strategies for high-dimensional -omics data" was adapted from a review paper previously published in the _Current Opinion in Biotechnology_ journal, as "Incorporating biological structure into machine learning models in biomedicine" (https://doi.org/10.1016/j.copbio.2019.12.021).
 
@@ -179,8 +179,9 @@ Much of our work, described later in this thesis, stems from the idea of predict
 At first consideration, an accurate mutation status classifier may not seem particularly useful, since for a patient sample a clinician could simply sequence the genome, or select genes in the genome, to determine driver mutation status.
 One application of accurate mutation status classifiers, however, is to identify samples with a similar phenotype to those with a driver mutation, but _without_ the mutation being present in DNA sequencing data.
 Observed examples of this phenomenon include the "BRCAness" phenotype in tumors without observed _BRCA1_/_BRCA2_ mutations [@doi:10.1038/nrc.2015.21], and the "Ph-like" leukemia phenotype in the absence of the Philadelphia chromosome fusion [@doi:10.1182/asheducation-2016.1.561], among others.
+
 Following this line of reasoning, algorithms have been developed to identify mutations that "phenocopy" known cancer drivers [@doi:10.1142/9789811215636_0031; @doi:10.1101/2022.07.28.501874], and to integrate this information into drug response prediction pipelines to define larger and more accurate patient subgroups [@doi:10.1186/s12859-021-04147-y; @doi:10.1038/s41525-022-00328-7].
-Related machine learning approaches to genomic prediction/phenotype identification include methods for identifying DNA damage repair deficiencies based on genomic data [@doi:10.1038/nm.4292; @doi:10.1038/s43018-022-00474-y] and for identifying synthetic lethal relationships for use in targeted therapy selection [@doi:10.1016/j.cell.2021.03.030].
+Related machine learning approaches to genomic prediction/phenotype identification include methods for identifying DNA damage repair deficiencies based on genomic and transcriptomic data [@doi:10.1038/nm.4292; @doi:10.1038/s43018-022-00474-y; @doi:10.1101/2023.08.23.554414] and for identifying synthetic lethal relationships for use in targeted therapy selection [@doi:10.1016/j.cell.2021.03.030].
 Such methods could be useful for defining broader and more representative patient groups than would be possible based solely on somatic mutation status, that may pool together similar tumor phenotypes or identify patients that respond to similar therapies.
 For example, in "basket" clinical trials where patients are included across cancer types based on the presence or absence of individual molecular markers [@doi:10.1200/jco.2014.58.2007], including "phenocopies" could improve efficacy for some therapies targeted to a particular gene or pathway.
 
@@ -500,7 +501,7 @@ This research was supported in part by the University of Pittsburgh Center for R
 
 
 
-## Chapter 3: Widespread redundancy in -omics profiles of cancer mutation states
+## Chapter 3: widespread redundancy in -omics profiles of cancer mutation states
 
 This chapter has been published in _Genome Biology_ (https://doi.org/10.1186/s13059-022-02705-y) as "Widespread redundancy in -omics profiles of cancer mutation states".
 
@@ -1028,7 +1029,7 @@ Bottom plots: comparison of classifier performance between elastic net and fully
 ](images/omics/supp_figure_14.png){#fig:multi_omics_mlp width=90%}
 
 
-## Chapter 4: Smaller models do not exhibit superior generalization performance
+## Chapter 4: smaller models do not exhibit superior generalization performance
 
 This chapter has been posted as a preprint on bioRxiv (TODO) under the title "Smaller models do not exhibit superior generalization performance".
 
@@ -1308,7 +1309,7 @@ One caveat of our analysis is that each cancer type is included in the training 
 
 
 
-## Conclusion
+### Conclusion
 
 Without directly evaluating model generalization, it is tempting to assume that simpler models will generalize better than more complex ones, and previous studies and sets of guidelines suggest this rule of thumb [@doi:10.1214/088342306000000060; @doi:10/bhfhgd; @doi:10.4137/CIN.S408; @doi:10.1371/journal.pcbi.1004961].
 However, we do not observe strong evidence that simpler models inherently generalize more effectively than more complex ones.
@@ -1342,6 +1343,82 @@ This research was supported in part by the University of Pittsburgh Center for R
 ![Top row: Distribution of performance differences when thyroid cancer (THCA) data is held out from training setacross seeds/folds, grouped by gene. Bottom row: Distributions of performance differences for genes where THCA is included in training/holdout sets, relative to other cancer types that are included.](images/generalization/supp_figure_3.png){#fig:thca_by_gene width="100%" .page_break_before}
 
 ![Performance vs. dropout parameter (first column) and weight decay strength (second column), for EGFR mutation prediction (first row) and KRAS mutation prediction (second row) using a 3-layer fully connected neural network trained on TCGA (blue/orange) and evaluated on CCLE (green).](images/generalization/supp_figure_4.png){#fig:nn_dropout_wd width="100%" .page_break_before}
+
+
+## Chapter 5: future directions and conclusion
+
+**Contributions:**
+I wrote this chapter for the purpose of this dissertation.
+
+In this dissertation, we have identified complexities of the structure of large cancer -omics datasets that make building predictive models less straightforward than on more uniform datasets, such as those often considered in large-scale machine learning applications to text and images.
+In chapter 2, our results indicated that model selection depends heavily on which optimizer is used to fit the model, even when relying on a fairly simple linear modeling strategy, logistic regression.
+More specifically, we concluded that stochastic gradient descent is less likely to overfit for lower levels of explicit regularization (smaller LASSO parameters) because it finds a slightly less good loss function optimum, suggesting a form of "implicit regularization" that coordinate descent does not appear to possess.
+We showed that this difference in optimizer behavior tends to hold across many different genes/classifiers, emphasizing that optimizer choice is important to carefully consider and document in the design of machine learning studies in transcriptomics.
+
+In chapter 3, we compared -omics types as predictors of mutational state, finding that for a set of approximately 250 driver genes, a variety of -omics types could serve as effective predictors, and most driver genes perturbed most functional readouts.
+We also saw that although different -omics types in TCGA may have slightly variable information content related to cancer function, much of it is redundant in the sense that combining -omics layers generally does not result in a large performance boost.
+We selected 6 frequently mutated pan-cancer driver genes, and for each of the 6 we saw that the best-performing classifier using a single -omics type (gene expression, 27K methylation, or 450K methylation) outperformed classifiers using all possible combinations of the 3 -omics datasets.
+In the context of the existing wide variety of multi-omics integration methods, reviewed in detail in [@doi:10.1016/j.inffus.2018.09.012; @doi:10.1016/j.csbj.2021.06.030] and others, this result is somewhat surprising.
+
+Our experiments in Chapter 4 showed that generalization of mutation status classifiers across cancer types and model systems can vary highly based on the held-out biological context.
+In contrast to existing guidelines, our results show that smaller or simpler models do not in general tend to be more robust across contexts (datasets or cancer types) than models that optimize cross-validation performance within a biological context.
+We saw similar results for linear models regularized using a LASSO penalty, and for neural networks regularized in a variety of ways, including limiting the size of hidden layers and using different dropout proportions.
+This has implications in cases where one trains a model on a single transcriptomic dataset with the intent of applying it to other datasets or applying it across a range of problems, suggesting that optimizing cross-validation performance on a held-out subset of the training data is sufficient.
+
+Taken together, these results have helped to better characterize the complexities of machine learning applied to large cancer datasets, particularly in transcriptomics but with some conclusions about other -omics types in Chapter 3.
+The following sections outline areas where future work could expand upon our results, with applications to development of methods and datasets, as well as downstream biological/clinical applications of the ideas described here.
+
+### Multi-omics integration
+
+In chapter 2, we saw the somewhat counterintuitive result that when gene expression and DNA methylation readouts were combined, they failed to predict mutations in 6 key pan-cancer driver genes better than expression or methylation data alone.
+We also noted in the discussion section of chapter 2 that the multi-omics integration method we tried was a fairly simple one: we combined the feature sets of each -omics type and fit a model directly to this larger dataset, sometimes referred to as "early" integration.
+Multi-omics integration is a particularly salient problem in single-cell analysis, where data are generally sparse and often unpaired, or measured on different cells (reviewed in [@doi:10.1038/s41581-021-00463-x; @doi:10.1016/j.csbj.2021.04.060; @doi:10.1016/j.tig.2021.08.012] and elsewhere).
+However, many existing methods are not designed to incorporate axes of variation other than those typically included in single-cell studies, such as mutation status or cancer type, although some incorporate supervision or prior knowledge (e.g. [@arxiv:2102.03014; @arxiv:2307.10093; @doi:10.1038/s42256-022-00545-w]).
+More specific characterization of the conditions under which integrating multiple -omics types provides additional information relative to some labeling, as well as identifying conditions when -omics types are functionally redundant, would have important implications for study design in both bulk and single-cell contexts.
+
+### Cancer model systems and data
+
+We showed in chapter 4 that when mutation prediction models are trained on cell line data, performance on tumor samples is generally worse than performance on held out cell lines.
+We also saw that the converse is not true: models trained on tumor samples tend to generalize relatively well to cell lines.
+This is likely due at least in part to biological differences between cancer cell lines and the tumors they aim to model.
+Other studies have also observed that cell line gene expression is less representative of tumor samples than PDX mouse models [@doi:10.1101/2023.04.11.536431] and genetically engineered mouse models [@doi:10.1186/s13073-021-00888-w], although this can vary by cancer type.
+In chapter 1, we noted the general reliance of existing drug response prediction efforts on public cell line datasets such as CCLE and GDSC, most likely due to the size (both in terms of sample size and number of -omics data types profiled) and accessibility of the datasets.
+Together with our results, this underscores the need for larger and more representative compendia of model system data that may be biologically closer to human tumors, including mouse models, tumoroids, and others.
+
+Another desired generalization property that we did not explore in this dissertation is between adult and pediatric cancers.
+There are fundamental differences between adult and pediatric cancer that make transferring therapies developed on adult cancers to their pediatric equivalents a non-trivial problem.
+In particular, pediatric cancers tend to have a much lower overall mutational burden, and the genes that drive pediatric cancers have limited overlap with their adult counterparts [@doi:10.1038/nature25795; @doi:10.1038/nature25480].
+With the increasing availability of public pediatric cancer -omics datasets including the Therapeutically Applicable Research to Generate Effective Treatments (TARGET) project [@doi:10.1056/NEJMoa0808253], the Open Pediatric Brain Tumor Atlas (OpenPBTA) [@doi:10.1016/j.xgen.2023.100340], and Pediatric DepMap [@doi:10.1038/s41588-021-00819-w], developing models that are either specific to pediatric cancer or that integrate both adult and pediatric cancer data is starting to become a possibility.
+Previous work has shown that a machine learning classifier to predict _TP53_ inactivation trained on data from TCGA generalized effectively to pediatric PDX tumors, but a similarly applied Ras activation classifier failed to generalize effectively [@doi:10.1016/j.celrep.2019.09.071].
+In the future, it would be useful to more broadly characterize cases where classifiers generalize effectively or fail to generalize in pediatric datasets, and to develop methods to incorporate abundant adult tumor data into models that can derive insight from pediatric samples that are more limited in quantity.
+
+### Validation and clinical application of mutation status classifiers
+
+Our "leave-one-cancer-type-out" experiments described in chapter 4 suggest that cancer types in TCGA can vary highly in how easy or hard they are to generalize to, or how similar or different they are from the rest of the dataset.
+This emphasizes the need for carefully choosing cross-validation holdout sets, since cross-validation sets that are stratified by cancer type, which is more typical for TCGA or CCLE analyses, may give an overly optimistic view of performance as compared to evaluation on an entirely held out cancer type.
+A similar experimental structure to ours for evaluating drug response prediction in held-out tissues was also described in [@doi:10.1038/s43018-020-00169-2], and related work has detailed problems in genomic prediction where generalization to new cell types may be desirable [@doi:10.1186/s13059-020-02177-y].
+
+Differentiating similar from divergent behavior of driver mutations in the same gene across tissues/cancer types could have direct applications in basket clinical trial design, where the basic idea is that patients are included in the trial across multiple cancer types based on the presence or absence of a targetable mutation or molecular alteration.
+A previous study explored the idea of selecting cancer types in a more principled way based on proteomics data, identifying several mutations with convergent effects across cancers including _ERBB2_ amplification and _KRAS_/_NRAS_ mutation [@doi:10.1186/s13073-018-0591-9],
+The experimental setup we described in chapters 3 and 4 could be used in a complementary manner to integrate more data types and provide improved statistical power across a variety of genes and cancer types.
+
+Moreover, the success or failure of a mutation status classifier in identifying samples that may be susceptible to a targeted therapy is likely to be highly dependent on the definition of "mutated" that is settled on to train the classifier.
+In the work described in this dissertation, we use a somewhat coarse-grained definition, where a sample "has a mutation" in a gene if there is either any non-silent point mutation in that gene, or a copy number variation in the correct direction for the gene's function in cancer (gain for oncogenes or loss for tumor suppressors).
+However, there are biological reasons to believe that both more flexibility in positive class definition (e.g. epigenetic modifications to genes, such as silencing via DNA methylation, or pathway cross-talk wherein mutations in different genes in the same signaling pathway could have the same functional effect) and/or more stringency in positive class definition (e.g. not all non-silent mutations in the same gene are necessarily functional or have a convergent function, as explored in [@doi:10.1186/s12859-021-04147-y]) could lead to more performant and robust classifiers in certain cases.
+
+The iterative process implemented in the LURE algorithm [@doi:10.1142/9789811215636_0031] is one approach to identifying different molecular alterations that have convergent functions in cancer, but the analysis in the study describing LURE is limited to individual cancer types and known driver mutations.
+A more flexible algorithm could simultaneously identify patients whose tumors have high pan-cancer functional similarity to a known driver alteration, and cancer types or even whole datasets/patient cohorts to include in model training in which this functional similarity is most pronounced, as a tool for rational design of basket clinical trials.
+Validation of such an algorithm to the standards of clinical use would be a challenge, and would likely depend at least initially on retrospective information about driver events in certain genes, in contrast to its desired prospective use in selecting clinical trial cohorts.
+
+### Final remarks
+
+Broadly, the fields of cancer genomics and computational oncology are rapidly evolving, both due to increases in the size and composition of public datasets, and due to the availability of more diverse types and sources of data.
+This has resulted in new opportunities in methods development and new leads for clinical applications, but it also presents challenges due to the heterogeneity of these datasets.
+We enumerated several of these challenges in this thesis, and described proposed solutions and insights, but there are sure to be many more hurdles in the future that we have not anticipated here.
+Examples may include age-specific, sex-specific, and ethnic/racial group-specific effects of driver mutations or therapeutics, different sequencing or data generation methods, and different preprocessing or standardization approaches, all of which can affect modeling downstream.
+Although on the surface it may seem like there are many potential pitfalls for applications of machine learning to large cancer datasets, we hope our work here shows that data heterogeneity can also present exciting opportunities for methodological creativity and biological insight in future research.
+Overall, the convergence of large, public cancer genomics data and methods designed for the specific characteristics of those data should be a cause for optimism.
+
 
 
 ## References {.page_break_before}
