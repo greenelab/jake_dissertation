@@ -1,5 +1,5 @@
 ---
-title: Jake Crawford dissertation title
+title: 'Navigating heterogeneity to learn from large-scale cancer data: optimization, redundancy, and generalization'
 keywords:
 - gene-expression
 - cancer-genomics
@@ -7,7 +7,7 @@ keywords:
 - optimization
 - domain-adaptation
 lang: en-US
-date-meta: '2023-09-12'
+date-meta: '2023-09-15'
 author-meta:
 - Jake Crawford
 header-includes: |
@@ -17,15 +17,15 @@ header-includes: |
   -->
   <meta name="dc.format" content="text/html" />
   <meta property="og:type" content="article" />
-  <meta name="dc.title" content="Jake Crawford dissertation title" />
-  <meta name="citation_title" content="Jake Crawford dissertation title" />
-  <meta property="og:title" content="Jake Crawford dissertation title" />
-  <meta property="twitter:title" content="Jake Crawford dissertation title" />
-  <meta name="dc.date" content="2023-09-12" />
-  <meta name="citation_publication_date" content="2023-09-12" />
-  <meta property="article:published_time" content="2023-09-12" />
-  <meta name="dc.modified" content="2023-09-12T19:30:34+00:00" />
-  <meta property="article:modified_time" content="2023-09-12T19:30:34+00:00" />
+  <meta name="dc.title" content="Navigating heterogeneity to learn from large-scale cancer data: optimization, redundancy, and generalization" />
+  <meta name="citation_title" content="Navigating heterogeneity to learn from large-scale cancer data: optimization, redundancy, and generalization" />
+  <meta property="og:title" content="Navigating heterogeneity to learn from large-scale cancer data: optimization, redundancy, and generalization" />
+  <meta property="twitter:title" content="Navigating heterogeneity to learn from large-scale cancer data: optimization, redundancy, and generalization" />
+  <meta name="dc.date" content="2023-09-15" />
+  <meta name="citation_publication_date" content="2023-09-15" />
+  <meta property="article:published_time" content="2023-09-15" />
+  <meta name="dc.modified" content="2023-09-15T14:27:14+00:00" />
+  <meta property="article:modified_time" content="2023-09-15T14:27:14+00:00" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -42,9 +42,9 @@ header-includes: |
   <meta name="citation_fulltext_html_url" content="https://greenelab.github.io/jake_dissertation/" />
   <meta name="citation_pdf_url" content="https://greenelab.github.io/jake_dissertation/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://greenelab.github.io/jake_dissertation/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://greenelab.github.io/jake_dissertation/v/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa/" />
-  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa/" />
-  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://greenelab.github.io/jake_dissertation/v/def2187d3d2f315d7e4a6886ea34fb84f8c79a1a/" />
+  <meta name="manubot_html_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/def2187d3d2f315d7e4a6886ea34fb84f8c79a1a/" />
+  <meta name="manubot_pdf_url_versioned" content="https://greenelab.github.io/jake_dissertation/v/def2187d3d2f315d7e4a6886ea34fb84f8c79a1a/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -66,10 +66,10 @@ manubot-clear-requests-cache: false
 
 <small><em>
 This manuscript
-([permalink](https://greenelab.github.io/jake_dissertation/v/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa/))
+([permalink](https://greenelab.github.io/jake_dissertation/v/def2187d3d2f315d7e4a6886ea34fb84f8c79a1a/))
 was automatically generated
-from [greenelab/jake_dissertation@2773a82](https://github.com/greenelab/jake_dissertation/tree/2773a822f3c45b12491bf5d664d37ba8b1f7f9aa)
-on September 12, 2023.
+from [greenelab/jake_dissertation@def2187](https://github.com/greenelab/jake_dissertation/tree/def2187d3d2f315d7e4a6886ea34fb84f8c79a1a)
+on September 15, 2023.
 </em></small>
 
 
@@ -100,10 +100,21 @@ on September 12, 2023.
 
 ## Abstract {.page_break_before}
 
+In the pursuit of molecular characterization of diverse cancers, collaborative efforts have generated large publicly available datasets, which combine various data types and data sources.
+Simultaneously, machine learning has rapidly gravitated toward models with many parameters that can be trained on broad sets of data, and subsequently fine-tuned to a wide variety of tasks.
+Computational oncology sits squarely at the intersection between these advances.
+However, the structure of most cancer datasets is uniquely heterogeneous, relative to other fields and data types in which large models have proven successful.
+In this dissertation, we first study aspects of machine learning model tuning in cancer, showing that the choice of optimizer used to fit models on cancer transcriptomics datasets can have pronounced effects on model selection.
+We then explore two aspects of heterogeneity inherent to public cancer datasets that affect machine learning modeling choices.
+We first show that most -omics types available in the TCGA Pan-Cancer Atlas can capture information relevant to cancer function, but somewhat less intuitively, when multiple -omics types are combined there is considerable redundancy and model performance does not generally improve.
+Next, we study model generalization across biological contexts in cancer transcriptomics and its implications on model selection, finding that cross-validation performance on holdout data is a sufficient selection criterion, and criteria that incorporate model sparsity or simplicity do not tend to improve generalization performance.
+Overall, our results show that the particularities of large cancer genomics datasets must be taken into account for applications of machine learning to be successful in this domain.
+These findings suggest hurdles to, but also opportunities for, machine learning models integrating pan-cancer and pan-omics data to derive biological and clinical insights.
 
 
 
-## Chapter 1: background
+
+## Chapter 1: background {.page_break_before}
 
 This chapter was formatted for this dissertation to provide background information and context for the following chapters. The subsection titled "Machine learning modeling strategies for high-dimensional -omics data" was adapted from a review paper previously published in the _Current Opinion in Biotechnology_ journal, as "Incorporating biological structure into machine learning models in biomedicine" (https://doi.org/10.1016/j.copbio.2019.12.021).
 
@@ -117,7 +128,7 @@ For the published parts of this chapter, I wrote the original draft of the revie
 
 Precision oncology, or the selection of cancer treatments based on molecular or cellular features of patients' tumors, has become a fundamental part of the standard of care for some cancers [@doi:10.1093/annonc/mdx707].
 Although each tumor is unique, the successes of precision oncology reinforce the idea that there are commonalities that can be understood and therapeutically targeted.
-Targeted therapies that have been successfully applied across cancer types and patient subsets include _HER2_ (_ERBB2_) inhibitors in breast and stomach cancer [@doi:10.1093/jnci/djp341], BTK inhibitors in various hematological malignancies [@doi:10.1186/s13045-022-01353-w], _EGFR_ inhibitors across a variety of carcinomas [@doi:10.1186/s13045-022-01311-6], and _PARP_ inhibitors for tumors with DNA damage repair defects [@doi:10.1093/annonc/mdz192].
+Targeted therapies that have been successfully applied across cancer types and patient subsets include _HER2_ (_ERBB2_) inhibitors in breast and stomach cancer [@doi:10.1093/jnci/djp341], BTK inhibitors in various hematological malignancies [@doi:10.1186/s13045-022-01353-w], _EGFR_ inhibitors across a variety of carcinomas [@doi:10.1186/s13045-022-01311-6], and _PARP_ inhibitors for tumors with DNA damage repair defects [@doi:10.1093/annonc/mdz192], among others.
 The genes and mutations that drive cancer are often specific to a given cancer type or subtype, but they tend to converge on a few pathways [@doi:10.1016/j.cell.2018.03.035; @doi:10.1016/j.cell.2020.11.045], making more general targeted treatments possible.
 
 The past decade has seen an expansion in the size and diversity of cancer genomics datasets, both publicly available and otherwise.
@@ -509,7 +520,9 @@ This chapter has been published in _Genome Biology_ (https://doi.org/10.1186/s13
 JC: conceptualization, methodology, software, visualization, writing - original draft, writing - review and editing
 BCC: methodology, writing - review and editing
 MC: methodology, writing - review and editing
-CSG: conceptualization, funding acquisition, methodology, supervision, writing - review and editing
+CSG: conceptualization, funding acquisition, methodology, supervision, writing - review and editing.
+An initial version of this manuscript was edited based on feedback from anonymous reviewers.
+
 
 
 ### Abstract

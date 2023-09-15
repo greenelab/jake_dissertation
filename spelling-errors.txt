@@ -24,7 +24,7 @@ BRAF
 BRCA
 BRCAness
 BTK
-ccle
+CCLE
 CCND
 CDKN
 CGC
@@ -79,7 +79,7 @@ glioblastoma
 glioma
 glmmTree
 GRRANN
-heatmap
+Heatmap
 Heil
 Hippen
 histone
@@ -128,7 +128,7 @@ NetBiTE
 netNMF
 netReg
 NGS
-NN
+nn
 nonlinearities
 NRAS
 omics
@@ -149,7 +149,7 @@ PASNet
 PCA
 PCAWG
 PCPG
-PDMR
+pdmr
 PDX
 perf
 performant
@@ -158,7 +158,7 @@ phenocopies
 phenocopy
 phenotypes
 phenotypic
-phylogenetic
+Phylogenetic
 PIK
 PIMKL
 Pividori

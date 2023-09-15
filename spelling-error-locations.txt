@@ -1,3 +1,14 @@
+content/01.abstract.md:3:datasets
+content/01.abstract.md:6:datasets
+content/01.abstract.md:7:datasets
+content/01.abstract.md:7:transcriptomics
+content/01.abstract.md:8:datasets
+content/01.abstract.md:9:omics
+content/01.abstract.md:9:omics
+content/01.abstract.md:9:TCGA
+content/01.abstract.md:10:transcriptomics
+content/01.abstract.md:11:datasets
+content/01.abstract.md:12:omics
 content/10.background_header.md:3:biomedicine
 content/10.background_header.md:3:omics
 content/11.introduction.md:5:BTK
